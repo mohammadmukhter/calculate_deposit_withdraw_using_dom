@@ -22,17 +22,23 @@
       <!-- balance section -->
       <section class="my-4">
         <div class="grid md:grid-cols-3 gap-4 md:w-9/12 mx-auto">
-          <div class="px-4 py-8 bg-lime-800 text-white rounded-xl">
-            <p class="text-2xl font-semibold">Deposit Amount</p>
-            <p class="text-3xl font-bold">$<span>00</span></p>
+          <div class="px-4 py-8 bg-lime-800 rounded-xl">
+            <p class="text-2xl font-semibold text-white">Deposit Amount</p>
+            <p class="text-3xl font-bold">
+              $<span id="cumulative_deposit">00</span>
+            </p>
           </div>
-          <div class="px-4 py-8 bg-red-700 text-white rounded-xl">
-            <p class="text-2xl font-semibold">Withdraw Amount</p>
-            <p class="text-3xl font-bold">$<span>00</span></p>
+          <div class="px-4 py-8 bg-red-700 rounded-xl">
+            <p class="text-2xl font-semibold text-white">Withdraw Amount</p>
+            <p class="text-3xl font-bold">
+              $<span id="cumulative_withdraw">00</span>
+            </p>
           </div>
-          <div class="px-4 py-8 bg-sky-800 text-white rounded-xl">
-            <p class="text-2xl font-semibold">Total Balance</p>
-            <p class="text-3xl font-bold">$<span>00</span></p>
+          <div class="px-4 py-8 bg-sky-800 rounded-xl">
+            <p class="text-2xl font-semibold text-white">Total Balance</p>
+            <p class="text-3xl font-bold">
+              $<span id="total_balance">00</span>
+            </p>
           </div>
         </div>
       </section>
@@ -40,9 +46,9 @@
       <!-- deposit and withdraw section -->
       <section class="my-12">
         <div class="grid md:grid-cols-2 gap-4 md:w-9/12 mx-auto">
-          <div class="px-4 py-8 bg-green-400 text-white rounded-xl">
+          <div class="px-4 py-8 bg-green-400 rounded-xl">
             <div class="space-y-4">
-              <p class="text-2xl font-semibold">Deposit Amount</p>
+              <p class="text-2xl font-semibold text-white">Deposit Amount</p>
               <input
                 id="deposit_field"
                 class="block w-full px-4 py-2 rounded-md"
@@ -58,9 +64,9 @@
               </div>
             </div>
           </div>
-          <div class="px-4 py-8 bg-yellow-600 text-white rounded-xl">
+          <div class="px-4 py-8 bg-yellow-600 rounded-xl">
             <div class="space-y-4">
-              <p class="text-2xl font-semibold">Withdraw Amount</p>
+              <p class="text-2xl font-semibold text-white">Withdraw Amount</p>
               <input
                 id="withdraw_field"
                 class="block w-full px-4 py-2 rounded-md"
@@ -79,5 +85,9 @@
         </div>
       </section>
     </main>
+
+    <!-- custom js link -->
+    <script src="./js/deposit.js"></script>
+    <script src="./js/withdraw.js"></script>
   </body>
 </html>
