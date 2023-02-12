@@ -12,22 +12,29 @@ const withdraw_btn = document.getElementById('withdraw_btn').addEventListener('c
         alert('Please input Withdraw Amount as a positive number value');
         return;
     }
+
+    // value from Cumulative Withdraw amount 
+    const cumulativeWithdrawElement= document.getElementById('cumulative_withdraw');
+    const cumulativeWithdraw = parseFloat(cumulativeWithdrawElement.innerText);
+
     
-    console.log(inputWithdraw);
-    // // value from Cumulative deposit amount 
-    // const cumulativeDepositElement= document.getElementById('cumulative_deposit');
-    // const cumulativeDeposit = parseFloat(cumulativeDepositElement.innerText);
+    // value from Total Balance amount
+    const previousTotalBalanceElement = document.getElementById('total_balance');
+    const previousTotalBalance = parseFloat(previousTotalBalanceElement.innerText);
 
-    // // calculate updated Cumulative deposit amount and update the cumulative deposit amount
-    // const updatedCumulativeDeposit = cumulativeDeposit + inputDeposit;
-    // cumulativeDepositElement.innerText = updatedCumulativeDeposit;
+    // validation if balance is less then withdraw
+    if(previousTotalBalance < inputWithdraw){
+        alert('Insufficient balance for withdraw! Please Enter withdraw amount less then available balance');
+        return;
+    }
 
-    // // value from Total Balance amount
-    // const previousTotalBalanceElement = document.getElementById('total_balance');
-    // const previousTotalBalance = parseFloat(previousTotalBalanceElement.innerText);
 
-    // // calculate updated Total Balance amount and update the total balance amount
-    // const updatedTotalBalance = previousTotalBalance + inputDeposit;
-    // previousTotalBalanceElement.innerText = updatedTotalBalance;
+    // calculate updated Total Balance amount and update the total balance amount
+    const updatedTotalBalance = previousTotalBalance - inputWithdraw;
+    previousTotalBalanceElement.innerText = updatedTotalBalance;
+
+    // calculate updated Cumulative withdraw amount and update the cumulative withdraw amount
+    const updatedCumulativeWithdraw = cumulativeWithdraw + inputWithdraw;
+    cumulativeWithdrawElement.innerText = updatedCumulativeWithdraw;
 
 });
