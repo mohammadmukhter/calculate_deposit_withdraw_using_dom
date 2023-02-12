@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate Savings or deposit balance and withdraw balance</title>
+
+    <!-- tailwind css link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- heading section -->
+    <header>
+      <h1 class="max-w-7xl mx-auto mt-4 p-4 text-center text-4xl font-semibold">
+        Login to Balance Counter
+      </h1>
+    </header>
+
+    <!-- main section html -->
+    <main>
+      <!-- login section -->
+      <section class="my-9">
+        <div class="max-w-lg mx-auto bg-green-200 py-12 px-4 rounded-md">
+          <div class="space-y-4">
+            <input
+              id="user_email"
+              type="email"
+              class="block w-full px-4 py-2 rounded-md"
+              placeholder="Enter Your email..."
+            />
+            <input
+              id="user_password"
+              type="password"
+              name="user_password"
+              class="block w-full px-4 py-2 rounded-md"
+              placeholder="Enter Your Password"
+            />
+            <div class="text-center">
+              <button
+                class="bg-orange-800 text-white px-6 py-2 rounded-md font-semibold"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- custom js link -->
+    <script src="./js/deposit.js"></script>
+    <script src="./js/withdraw.js"></script>
+  </body>
+</html>
