@@ -1,27 +1,3 @@
-// reusable function for inputFieldValueById 
-function inputFieldValueById(InputFieldId){
-    const inputFieldElement=document.getElementById(InputFieldId);
-    const inputFieldValue = parseFloat(inputFieldElement.value);
-
-    // clear the input field with null value
-    inputFieldElement.value= '';
-
-    return inputFieldValue;
-}
-
-// reusable function for Element value of Element innerText value by elementValueById function
-function elementValueById(elementId){
-    const previousElement= document.getElementById(elementId);
-    const previousElementValue = parseFloat(previousElement.innerText);
-
-    return previousElementValue;
-}
-
-// set the value to the cumulative element by setCumulativeValueById
-function setCumulativeValueById(cumulativeElementId, updatedValue){
-    const element = document.getElementById(cumulativeElementId);
-    element.innerText = updatedValue;
-}
 
 const deposit_btn = document.getElementById('deposit_btn').addEventListener('click', (e)=>{
     
@@ -51,5 +27,17 @@ const deposit_btn = document.getElementById('deposit_btn').addEventListener('cli
     const updatedTotalBalance = previousTotalBalance + inputDepositFieldValue;
     // set the final balance
     setCumulativeValueById('total_balance', updatedTotalBalance);
+
+    // create a tr element for table body
+    const tBody = document.getElementById('t_body');
+        let i = 1 + tBody.children.length;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<th>${i}</th>
+        <td>$${inputDepositFieldValue}</td>
+        <td><span class="text-green-600">Deposited</span></td>
+        <td>${new Date().toLocaleString()}</td>
+        `;
+        tBody.appendChild(tr);
 
 });

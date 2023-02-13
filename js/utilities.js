@@ -4,7 +4,8 @@ function inputFieldValueById(InputFieldId){
     const inputFieldValue = parseFloat(inputFieldElement.value);
 
     // clear the input field with null value
-    inputFieldElement.value= '';
+    inputFieldElement.value = '';
+    
 
     return inputFieldValue;
 }

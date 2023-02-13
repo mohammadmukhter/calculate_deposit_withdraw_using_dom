@@ -3,7 +3,6 @@ const withdraw_btn = document.getElementById('withdraw_btn').addEventListener('c
     // withdraw field value
     const inputWithdrawFieldValue= inputFieldValueById('withdraw_field');
 
-
     // validation for numbers value
     if(isNaN(inputWithdrawFieldValue) || inputWithdrawFieldValue < 0){
         alert('Please input Withdraw Amount as a positive number value');
@@ -36,5 +35,18 @@ const withdraw_btn = document.getElementById('withdraw_btn').addEventListener('c
 
     // set the cumulative withdraw element
     setCumulativeValueById('cumulative_withdraw', updatedCumulativeWithdraw);
+
+    // create a tr element for table body
+    const tBody = document.getElementById('t_body');
+        let i = 1 + tBody.children.length;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<th>${i}</th>
+        <td>$${inputWithdrawFieldValue}</td>
+        <td><span class="text-red-600">Withdraw</span></td>
+        <td>${new Date().toLocaleString()}</td>
+        `;
+        tBody.appendChild(tr);
+
 
 });
