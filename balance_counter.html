@@ -8,6 +8,12 @@
 
     <!-- tailwind css link -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisyUI link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.50.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
   <body>
     <!-- heading section -->
@@ -51,6 +57,40 @@
             <p class="text-3xl font-bold text-white">
               $<span id="total_balance">00</span>
             </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- transaction statements section -->
+      <section class="my-4">
+        <div class="w-3/4 mx-auto bg-slate-300 rounded-lg">
+          <p class="text-2xl text-red-500 font-semibold px-4 py-2">
+            All Transactions
+            <button
+              class="bg-sky-900 px-4 py-0 hover:bg-red-600 rounded-lg text-white"
+            >
+              click
+            </button>
+          </p>
+          <div id="table_area" class="overflow-x-auto" hidden>
+            <table class="table w-full">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Job</th>
+                  <th>Favorite Color</th>
+                </tr>
+              </thead>
+              <tbody id="t_body">
+                <tr>
+                  <th>1</th>
+                  <td>Cy Ganderton</td>
+                  <td>Quality Control Specialist</td>
+                  <td>Blue</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -99,7 +139,9 @@
     </main>
 
     <!-- custom js link -->
+    <script src="./js/utilities.js"></script>
     <script src="./js/deposit.js"></script>
     <script src="./js/withdraw.js"></script>
+    <script src="./js/transactions.js"></script>
   </body>
 </html>
